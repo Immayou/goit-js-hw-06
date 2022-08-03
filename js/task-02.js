@@ -14,5 +14,5 @@ item.classList.add('item')
 item.textContent = `${ingredient}`
 list.append(item)}
 )
-
 console.log(list)
+
