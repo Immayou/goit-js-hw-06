@@ -15,11 +15,10 @@ const images = [
 
 const galleryEl = document.querySelector('.gallery')
 
-images.forEach((image) => {
-  const itemEl = document.createElement('li')
-  itemEl.classList.add('gallery_item')
-  itemEl.insertAdjacentHTML('afterbegin', `<img src = ${image.url} alt = ${image.alt}></img>`)
-  galleryEl.insertAdjacentElement('afterbegin', itemEl)
-})
+const makeGalleryItem = images
+.map((image) => `<img src = ${image.url} alt = "${image.alt}" class = "gallery_item"></img>`)
+.join("")
+
+galleryEl.insertAdjacentHTML('afterbegin', makeGalleryItem)
 console.log(galleryEl)
 
