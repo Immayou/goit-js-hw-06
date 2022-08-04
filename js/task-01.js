@@ -9,3 +9,4 @@ for (let i = 0; i < titles.length; i += 1) {
     console.log(`Category: ${title} 
 Elements: ${itemsAmount}`);
   }
+

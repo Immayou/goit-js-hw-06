@@ -13,29 +13,13 @@ const images = [
   },
 ];
 
-const galleryList = document.querySelector('.gallery')
+const galleryEl = document.querySelector('.gallery')
 
-images.forEach(image => {
+images.forEach((image) => {
   const itemEl = document.createElement('li')
   itemEl.classList.add('gallery_item')
-  itemEl.insertAdjacentHTML('afterbegin', "<img src = "`${image.url}`" alt = "`${image.alt}`"></img>")
-  galleryList.insertAdjacentElement('afterbegin', itemEl)
+  itemEl.insertAdjacentHTML('afterbegin', `<img src = ${image.url} alt = ${image.alt}></img>`)
+  galleryEl.insertAdjacentElement('afterbegin', itemEl)
 })
-
-console.log(galleryList)
-
-// const galleryList = document.querySelector('.gallery')
-
-// images.forEach(image => {
-//   const itemEl = document.createElement('li')
-//   const imageEl = document.createElement('img')
-//   itemEl.classList.add('gallery_item')
-//   imageEl.src = image.url
-//   imageEl.alt = image.alt
-//   itemEl.appendChild(imageEl)
-//   galleryList.insertAdjacentElement('afterbegin', itemEl)
-// })
-
-// console.log(galleryList)
-
+console.log(galleryEl)
 
