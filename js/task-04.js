@@ -1,23 +1,24 @@
-const counterValue = document.querySelector("#value");
-let valueEl = counterValue.textContent;
+const valueEl = document.querySelector("#value");
+let counterValue = 0;
 const onIncrementButtonClick = document.querySelector('[data-action = "increment"]')
 const onDecrementButtonClick = document.querySelector('[data-action = "decrement"]')
-console.log(valueEl)
 
-function counter () {
-onIncrementButtonClick.addEventListener('click', pushIncrement)
-onDecrementButtonClick.addEventListener('click', pushDecrement)
+function incrementClick () {
+    updateCounterValue(counterValue += 1)
 }
 
-function pushIncrement () {
-    valueEl += 1
-    console.log("+")
+function decrementClick () {
+    updateCounterValue(counterValue -= 1)
 }
 
-function pushDecrement () {
-    valueEl -= 1
-    console.log("-")
+function updateCounterValue () {
+    valueEl.textContent = counterValue
 }
+
+onIncrementButtonClick.addEventListener('click', incrementClick)
+onDecrementButtonClick.addEventListener('click', decrementClick)
+
+
 
 // function buttonCounterClick (event) {
 //     let valueEl = counterValue.textContent;
