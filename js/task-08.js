@@ -1,25 +1,29 @@
-const form = document.querySelector('.login-form')
+const formEl = document.querySelector('.login-form')
 
-form.addEventListener('submit', onFormSubmit)
+formEl.addEventListener('submit', onFormSubmit)
 
 function onFormSubmit (event) {
     event.preventDefault()
 
     const formData = new FormData(event.currentTarget)
-    console.log(formData)
-    formData.forEach((value, name) => {
+    console.log(event.currentTarget.elements)
+
+    formData.forEach((value, key) => {
     if(event.currentTarget.elements.email.value === "" || event.currentTarget.elements.password.value === "") {
     const message = 'Будь ласка, заповніть усі поля форми!'
     alert(message)
     } else {
-    let vallueArray = {name: value}
-    
-    console.log()
-    }
+    let valueArray = `{${key}: ${value}}`;
+    console.log(valueArray)
+    } 
 
+    // if(event.currentTarget.elements.email.value !== "" && event.currentTarget.elements.password.value !== "") {
+    // event.currentTarget.reset()
+    // } 
+    
     })
 }
-
+// console.log(`Login: ${event.currentTarget.elements.email.value}, Password: ${event.currentTarget.elements.password.value}`)
 
 // якщо є незаповнене поле -  alert с предупреждением о том, что все поля должны быть заполнены.
 // якщо заповнено все поля и отправил форму, збери значения полів в обьект, де имя поля будет именем свойства, 
