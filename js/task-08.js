@@ -6,17 +6,16 @@ function onFormSubmit (event) {
     event.preventDefault()
 
     const formData = new FormData(event.currentTarget)
-    console.log(event.currentTarget.elements)
     let valueArray = {};
-
     formData.forEach((value, key) => {
     if(event.currentTarget.elements.email.value === "" || event.currentTarget.elements.password.value === "") {
     const message = 'Будь ласка, заповніть усі поля форми!'
     alert(message)
     } else {
-    valueArray = `{${key}: ${value}}`
-    } 
+    valueArray = `${key}: ${value}`
+   
     console.log(valueArray)
+    } 
     // if(event.currentTarget.elements.email.value !== "" && event.currentTarget.elements.password.value !== "") {
     // event.currentTarget.reset()
     // } 
