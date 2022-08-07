@@ -26,6 +26,7 @@ function createBoxes(amount) {
 
 function destroyBoxes(event) {
   divBoxesContainer.innerHTML = ''
+  numberInputValue.value = ''
 }
 
 function getRandomHexColor() {
